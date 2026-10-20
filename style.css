@@ -4,7 +4,7 @@ body  {
     color:  #191970; /* Warna teks utama (Biru Gelap) */
 }
 
-.kartu-profil {
+.Kartu-profil {
   width:  300px;
   margin:  50px auto; /* 50px jarak atas/bawah, auto menengahkan kiri/kanan */
   padding:  20px;
@@ -14,11 +14,11 @@ body  {
 }
 
 
-.kartu-profil img {
+.Kartu-profil img {
      width:  150px
       border-radius: 50%; /* Trik untuk membuat gambar persegi menjadi lingkaran sempurna */
 }
-.kartu profil {
+.Kartu profil {
     /* ... (Kode dari slide sebelumnya ... */
     text-align:  center;  /* Menengahkan semua teks di dalam kartu */
 }
