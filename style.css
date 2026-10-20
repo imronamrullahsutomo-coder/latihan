@@ -1,24 +1,23 @@
-body  {
-    background-color: #FFFFE0; /* Warna kunin cerah  */
-    font-family: Arial,  sans-serif; /* Jenis huruf yang bersih dan mudah dibaca */
-    color:  #191970; /* Warna teks utama (Biru Gelap) */
+/* Pengaturan tampilan dasar untuk seluruh halaman web */
+body {
+    background-color: #FFFFE0; /* Warna kuning cerah */
+    font-family: Arial, sans-serif; /* Jenis huruf yang bersih dan mudah dibaca */
+    color: #191970; /* Warna teks utama (Biru Gelap) */
 }
 
-.Kartu-profil {
-  width:  300px;
-  margin:  50px auto; /* 50px jarak atas/bawah, auto menengahkan kiri/kanan */
-  padding:  20px;
-  background-color:  white;
-  border-radius:  15px;  /* Membuat sudut menjadi melengkung  */
-  box-shadow:  0  4px  8px  rgba(0,0,0.1);  /* Efek bayangan */
+/* Pengaturan untuk kotak kartu profil */
+.kartu-profil {
+    width: 300px;
+    margin: 50px auto; /* 50px jarak atas/bawah, auto menengahkan kiri/kanan */
+    padding: 20px;
+    background-color: white;
+    border-radius: 15px; /* Membuat sudut kotak menjadi melengkung */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Efek bayangan halus di bawah kartu */
+    text-align: center; /* Menengahkan semua teks dan elemen di dalam kartu */
 }
 
-
-.Kartu-profil img {
-     width:  150px
-      border-radius: 50%; /* Trik untuk membuat gambar persegi menjadi lingkaran sempurna */
-}
-.Kartu profil {
-    /* ... (Kode dari slide sebelumnya ... */
-    text-align:  center;  /* Menengahkan semua teks di dalam kartu */
+/* Pengaturan khusus untuk gambar di dalam kartu profil */
+.kartu-profil img {
+    width: 150px;
+    border-radius: 50%; /* Trik CSS untuk membuat foto kotak menjadi lingkaran sempurna */
 }
