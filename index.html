@@ -109,7 +109,7 @@
             <form onsubmit="saveClassName(event)">
                 <div class="form-group">
                     <label>Nama Kelas</label>
-                    <input type="text" id="inputClassName" required placeholder="Contoh: XII RPL 1">
+                    <input type="text" id="inputClassName" required placeholder="Contoh: XI DKV 3">
                 </div>
                 <div class="form-group">
                     <label>Sub-judul / Keterangan</label>
@@ -166,18 +166,18 @@
         </div>
     </div>
 
-    <!-- Modal Ganti Foto Struktur Kelas -->
+    <!-- Modal Upload Foto dari Galeri (Diperbarui) -->
     <div class="modal" id="changePhotoModal">
         <div class="modal-box">
-            <h3>Ganti Foto Struktur Kelas</h3>
-            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 15px;">Masukkan URL gambar atau link foto baru:</p>
+            <h3>Upload Foto Struktur Kelas</h3>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 15px;">Pilih foto struktur kelas langsung dari perangkat/galeri Anda:</p>
             <form onsubmit="saveNewPhoto(event)">
                 <div class="form-group">
-                    <input type="url" id="photoUrlInput" required placeholder="https://contoh.com/foto.jpg">
+                    <input type="file" id="photoFileInput" accept="image/*" required style="padding: 8px;">
                 </div>
                 <div class="modal-actions">
                     <button type="button" class="btn-cancel" onclick="closeChangePhotoModal()">Batal</button>
-                    <button type="submit" class="btn-save">Ganti Foto</button>
+                    <button type="submit" class="btn-save">Upload & Simpan</button>
                 </div>
             </form>
         </div>
