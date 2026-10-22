@@ -37,7 +37,7 @@ const defaultPiket = {
 
 const defaultPhoto = "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80";
 
-// Load dari localStorage atau default
+// Load dari localStorage atau pakai default
 let currentClassInfo = JSON.parse(localStorage.getItem("classInfo")) || defaultClassInfo;
 let currentTeam = JSON.parse(localStorage.getItem("classTeam")) || defaultTeam;
 let jadwalPiket = JSON.parse(localStorage.getItem("classPiket")) || defaultPiket;
@@ -209,7 +209,7 @@ function setActiveTab(day) {
 function handlePhotoClick() {
     if (isEditMode) {
         document.getElementById("changePhotoModal").style.display = "flex";
-        document.getElementById("photoUrlInput").value = currentPhoto;
+        document.getElementById("photoFileInput").value = ""; // Reset input file
     } else {
         const modal = document.getElementById("photoModal");
         const modalImg = document.getElementById("imgModalTarget");
@@ -226,13 +226,22 @@ function closeChangePhotoModal() {
     document.getElementById("changePhotoModal").style.display = "none";
 }
 
+// Fungsi Upload Foto dari Galeri menggunakan FileReader
 function saveNewPhoto(e) {
     e.preventDefault();
-    const newUrl = document.getElementById("photoUrlInput").value;
-    currentPhoto = newUrl;
-    localStorage.setItem("classPhoto", currentPhoto);
-    renderStructurePhoto();
-    closeChangePhotoModal();
+    const fileInput = document.getElementById("photoFileInput");
+    const file = fileInput.files[0];
+
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(event) {
+            currentPhoto = event.target.result; // Hasil konversi file ke Base64
+            localStorage.setItem("classPhoto", currentPhoto);
+            renderStructurePhoto();
+            closeChangePhotoModal();
+        };
+        reader.readAsDataURL(file);
+    }
 }
 
 // Edit Nama Kelas
@@ -248,7 +257,7 @@ function closeEditClassModal() {
 
 function saveClassName(e) {
     e.preventDefault();
-    currentClassInfo.name = document.getElementById("inputClassName").value;
+    currentClassInfo.name = document.getElementById("inputClassName".trim()).value;
     currentClassInfo.desc = document.getElementById("inputClassDesc").value;
     
     localStorage.setItem("classInfo", JSON.stringify(currentClassInfo));
@@ -315,4 +324,5 @@ function deletePiket(day, index) {
         localStorage.setItem("classPiket", JSON.stringify(jadwalPiket));
         renderPiketList(day);
     }
-}
+        }
+        
